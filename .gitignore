@@ -2,4 +2,4 @@
 .env.prod
 .env.prod.db
 .env.prod.pgadmin
-.env_dev
+.env
