@@ -10,4 +10,5 @@
 
 ## Configuration
 
-the '.env_example' re-name this file to '.env', and replace all data in that file, this file is to develop environment
+the .env_example re-name this file to .env, this file is for develop environment
+
