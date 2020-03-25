@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ngelrojas/stretch-3d.svg?branch=master)](https://travis-ci.org/ngelrojas/stretch-3d)
+TRAVIS CI [![Build Status](https://travis-ci.org/ngelrojas/stretch-3d.svg?branch=master)](https://travis-ci.org/ngelrojas/stretch-3d)
 
 # STRETCH 3D
 
