@@ -29,8 +29,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
-
-INSTALLED_APPS = [
+APP_LOCAL = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+APP_THRIDPARTY = []
+
+APP_DEV = []
+
+INSTALLED_APPS = APP_LOCAL + APP_THRIDPARTY + APP_DEV
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
