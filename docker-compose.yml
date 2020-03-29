@@ -17,9 +17,9 @@ services:
         volumes:
             - postgres_data:/var/lib/postgresql/data/
         environment:
-            - POSTGRES_USER=strech_user
-            - POSTGRES_PASSWORD=strech2020
-            - POSTGRES_DB=strech_db
+            - POSTGRES_USER=${SQL_USER}
+            - POSTGRES_PASSWORD=${SQL_PASSWORD}
+            - POSTGRES_DB=${SQL_DATABASE}
     pgadmin:
         image: dpage/pgadmin4
         container_name: pgadmin-dev
@@ -28,8 +28,8 @@ services:
         ports:
             - 5051:80
         environment:
-            PGADMIN_DEFAULT_EMAIL: admin@ngelrojasp.com
-            PGADMIN_DEFAULT_PASSWORD: admin2020
+            - PGADMIN_DEFAULT_EMAIL=${PG_EMAIL}
+            - PGADMIN_DEFAULT_PASSWORD=${PG_PASSWORD}
         restart: always
 
 volumes:
