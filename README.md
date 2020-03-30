@@ -10,4 +10,9 @@ TRAVIS CI [![Build Status](https://travis-ci.org/ngelrojas/stretch-3d.svg?branch
 
 ## Configuration
 
-the '.env_example' re-name this file to '.env', and replace all data in that file, this file is to develop environment
+- the '.env_example' re-name this file to '.env', and replace all data in that file, this file is to develop environment
+- the samething re-name all files .env to remove prefix "example"
+
+## Run mode Development
+
+- docker-compose up
