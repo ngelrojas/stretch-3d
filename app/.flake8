@@ -3,5 +3,6 @@ exclude =
     migrations,
     __pycache__,
     manage.py,
-    ./api/settings/*.py,
+    ./api/settings/settings_prod.py,
+    ./api/settings/settings_dev.py,
     management
