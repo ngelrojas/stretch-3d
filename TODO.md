@@ -12,7 +12,7 @@
 - next
 - fix flake8 to remove all files .py
 
-### task pendding
+### task done
 
 - docker-compose fix the problem .env file, occur when migrate
 - error migrate whe environment is uncomment
