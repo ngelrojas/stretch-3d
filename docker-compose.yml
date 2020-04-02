@@ -11,9 +11,10 @@ services:
         #env_file:
             #- ./.env
         environment:
-            - POSTGRES_DB=db
-            - POSTGRES_USER=${SQL_USER}
-            - POSTGRES_PASSWORD=${SQL_PASSWORD}
+            - SQL_HOST=db
+            - SQL_DATABASE=${SQL_DATABASE}
+            - SQL_USER=${SQL_USER}
+            - SQL_PASSWORD=${SQL_PASSWORD}
         depends_on:
             - db
     db:
