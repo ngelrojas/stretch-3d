@@ -5,4 +5,5 @@ exclude =
     manage.py,
     ./api/settings/development.py,
     ./api/settings/production.py,
+    ./core/models.py,
     management
