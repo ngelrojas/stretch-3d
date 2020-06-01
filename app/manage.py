@@ -3,7 +3,6 @@ import os
 import sys
 
 if __name__ == "__main__":
-    # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "api.settings")
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "api.settings.development")
     # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "api.settings.production")
     try:
