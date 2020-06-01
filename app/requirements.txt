@@ -6,3 +6,4 @@ djangorestframework
 drf-yasg
 django-cors-headers
 django-smtp-ssl
+pytest-django
