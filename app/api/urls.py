@@ -22,7 +22,7 @@ from drf_yasg import openapi
 schema_view = get_schema_view(
     openapi.Info(
         title="MY API",
-        default_version='v1',
+        default_version="v1",
         description="my api example",
         terms_of_service="https://ngelrojasp.com/policies/terms/",
         contact=openapi.Contact(email="me@ngelrojasp.com"),
@@ -33,15 +33,21 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    re_path(r'^api/v1/my-doc(?P<format>\.json|\.yaml)$',
-            schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    re_path(r'^api/v1/my-doc/$',
-            schema_view.with_ui('swagger',
-                                cache_timeout=0),
-            name='schema-swagger-ui'),
-    re_path(r'^api/v1/my-doc/$',
-            schema_view.with_ui('redoc', cache_timeout=0),
-            name='schema-redoc'),
-    path('admin/', admin.site.urls),
-    path('api/v1/', include('rest_framework.urls'))
+    re_path(
+        r"^api/v1/my-doc(?P<format>\.json|\.yaml)$",
+        schema_view.without_ui(cache_timeout=0),
+        name="schema-json",
+    ),
+    re_path(
+        r"^api/v1/my-doc/$",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
+    re_path(
+        r"^api/v1/my-doc/$",
+        schema_view.with_ui("redoc", cache_timeout=0),
+        name="schema-redoc",
+    ),
+    path("admin/", admin.site.urls),
+    path("api/v1/", include("users.urls")),
 ]
