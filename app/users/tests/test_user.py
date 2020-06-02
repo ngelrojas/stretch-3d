@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.urls import reverse
 
-URL_USER = reverse("user:create")
+URL_USER_DETAILS = reverse("user:user-details", (), {"pk": 2})
 
 
 class UserManagerTests(TestCase):
@@ -35,5 +35,8 @@ class UserManagerTests(TestCase):
 
     @pytest.mark.django_db
     def test_view_pytest(self):
-        response = self.client.get(URL_USER)
+        User = get_user_model()
+        user = User.objects.create_user("me@ngelrojasp.com", "me123456")
+        url = reverse("user:user-details", (), {"pk", user.pk})
+        response = self.client.get(URL_USER_DETAILS)
         assert response.status_code == 200
