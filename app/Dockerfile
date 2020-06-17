@@ -6,8 +6,17 @@ ENV PYTHONDONTWRITEBYTECODE 1
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update \
-        && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apk add --update \
+        && apk add postgresql-dev gcc python3-dev musl-dev \
+                build-base \
+                linux-headers \
+                py3-cffi \
+                py3-cryptography \
+                libffi-dev \
+                ca-certificates \
+                && update-ca-certificates \
+                && pip3 install grpcio bcrypt \
+                && rm -rf /var/cache/apk/*
 
 RUN pip install --upgrade pip
 
