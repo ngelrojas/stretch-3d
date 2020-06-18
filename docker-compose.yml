@@ -25,18 +25,18 @@ services:
             - POSTGRES_DB=${SQL_DATABASE}
             - POSTGRES_USER=${SQL_USER}
             - POSTGRES_PASSWORD=${SQL_PASSWORD}
-
-    pgadmin:
-        image: dpage/pgadmin4
-        container_name: pgadmin-dev
-        depends_on:
-            - db
+    prometheus:
+        image: prom/prometheus:v2.14.0
+        volumes:
+            - ./prometheus/:/etc/prometheus/
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
         ports:
-            - 5051:80
-        environment:
-            - PGADMIN_DEFAULT_EMAIL=${PG_EMAIL}
-            - PGADMIN_DEFAULT_PASSWORD=${PG_PASSWORD}
-        restart: always
+            - 9090:9090
+    grafana:
+        image: grafana/grafana:6.5.2
+        ports:
+            - 3060:3000
 
 volumes:
     postgres_data:
