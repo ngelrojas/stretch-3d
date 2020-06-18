@@ -6,4 +6,4 @@ djangorestframework
 drf-yasg
 django-cors-headers
 django-smtp-ssl
-drf-renderer-xlsx
+django-prometheus
