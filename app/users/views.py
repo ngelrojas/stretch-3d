@@ -24,6 +24,9 @@ class UserViewSet(viewsets.ModelViewSet):
         """
             retrieve current user
         """
-        current_user = QueryUser.current_user(self, request)
-        serializer = self.serializer_class(current_user)
-        return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+        try:
+            current_user = QueryUser.current_user(self, pk)
+            serializer = self.serializer_class(current_user)
+            return Response({"data": serializer.data}, status=status.HTTP_200_OK)
+        except Exception as err:
+            return Response({'error', f'{err}'})
