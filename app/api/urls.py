@@ -49,5 +49,6 @@ urlpatterns = [
         name="schema-redoc",
     ),
     path("admin/", admin.site.urls),
+    path("", include("django_prometheus.urls")),
     path("api/v1/", include("users.urls")),
 ]
