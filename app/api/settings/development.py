@@ -44,6 +44,7 @@ APP_THRIDPARTY = [
     "rest_framework",
     "drf_yasg",
     "corsheaders",
+    "django_prometheus",
 ]
 
 APP_API = [
@@ -54,6 +55,7 @@ APP_API = [
 INSTALLED_APPS = APP_LOCAL + APP_THRIDPARTY + APP_API
 
 MIDDLEWARE = [
+    "django_prometheus.middleware.PrometheusBeforeMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -61,6 +63,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_prometheus.middleware.PrometheusAfterMiddleware",
 ]
 
 ROOT_URLCONF = "api.urls"
@@ -104,7 +107,6 @@ REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": (
         "rest_framework.renderers.JSONRenderer",
         "rest_framework.renderers.BrowsableAPIRenderer",
-        "drf_renderer_xlsx.renderers.XLSXRenderer",
     ),
 }
 
