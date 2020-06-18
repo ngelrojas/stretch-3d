@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
+from django_prometheus.models import ExportModelOperationsMixin
 
 
 class UserManager(BaseUserManager):
@@ -25,7 +26,7 @@ class UserManager(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser, PermissionsMixin):
+class User(ExportModelOperationsMixin('user'), AbstractBaseUser, PermissionsMixin):
     """custom user model that supposrts using email instead of username"""
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
