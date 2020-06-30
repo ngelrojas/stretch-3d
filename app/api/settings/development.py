@@ -45,7 +45,10 @@ APP_THRIDPARTY = [
     'corsheaders',
 ]
 
-APP_API = []
+APP_API = [
+    'core',
+    'users',
+]
 
 INSTALLED_APPS = APP_LOCAL + APP_THRIDPARTY + APP_API
 
@@ -165,3 +168,6 @@ CORS_ALLOW_HEADERS = default_headers + (
     'HTTP_X_XSRF_TOKEN',
     "X-ACCESS_TOKEN",
 )
+
+# custom User
+AUTH_USER_MODEL = 'core.user'
